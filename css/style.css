@@ -163,11 +163,16 @@ main{
     outline: none;
     border-radius: 5px;
 }
+#input-keliling{
+    padding: 10px;
+    border: 1px solid #31C48D;
+    outline: none;
+    border-radius: 5px;
+}
 
 .content-result{
     margin-top: 24px;
     width: 30%;
-    /* border: 1px solid grey; */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     background-color: white;
     border-radius: 10px;
@@ -180,13 +185,7 @@ main{
     background-color: whitesmoke;
 }
 
-.result-body{
-    padding: 24px;
-}
-
-/* @media screen and (min-width:1024px){
-
-} */
+.result-body{padding: 24px;}
 
 @media screen and (min-width:768px) and (max-width:1023px){
     .content-body{
@@ -194,12 +193,8 @@ main{
         justify-content: center;
         align-items: center;
     }
-    .content-input{
-        width: 90%;
-    }
-    .content-result{
-        width: 90%;
-    }
+    .content-input{width: 90%;}
+    .content-result{width: 90%;}
 }
 
 @media screen and (max-width:767px){
@@ -208,25 +203,16 @@ main{
         justify-content: center;
         align-items: center;
     }
-    .content-input{
-        width: 90%;
-    }
-    .content-result{
-        width: 90%;
-    }
+    .content-input{width: 90%;}
+    .content-result{width: 90%;}
     .layout-bangun-datar{
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 50px;
     }
-    /* .title-hitung{
-        display: none;
-    } */
 }
 
-@media screen and (max-width:580px) {
-    .title-hitung{
-        display: none;
-    }
+@media screen and (max-width:500px) {
+    .title-hitung{display: none;}
 }

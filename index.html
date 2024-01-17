@@ -3,81 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"content="Katik Kalkulator Matematik menghitung bangun datar automatis besertakan Rumus dan Cara penyelesaian nya.">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://www.shutterstock.com">
+    <link rel="preload" href="https://www.shutterstock.com">
+    <link rel="dns-prefetch" href="https://www.shutterstock.com">
     <title>Document</title>
 </head>
 <body>
-<header>
-    <div class="
-    title">
-        <h2>Katik</h2>
-        <small>Kalkulator Matematik</small>
-    </div>
-</header>
-<main>
-    <div class="content">
-        <div class="content-header">
-            <div class="header-wrap">
-                <div class="content-title">
-                    <h1>Welcome to Katik</h1>
-                </div>
-                <div class="content-subtitle">
-                    <p>Hai Sobat, Selamat datang di Katik :]</p>
-                    <p>Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangun datar</p>
-                </div>
+    <header>
+        <nav>
+            <div class="title">
+                <h2>Katik</h2>
+                <small>Kalkulator Matematik</small>
             </div>
-        </div>
-        <div class="content-body">
-            <div class="content-result">
-                <div class="result-header">
-                    <p>Result Box</p>
-                </div>
-                <div class="result-body">
-                    <p>Result will appear here...</p>
-                </div>
-            </div>
-            <div class="content-input">
-                <div class="tabs-bangun-datar">
-                    <ul>
-                        <li>
-                            <button class="active-tab">Persegi</button>
-                        </li>
-                        <li>
-                            <button class="">Persegi Panjang</button>
-                        </li>
-                    </ul>
-                    <h3 class="title-hitung">Hitung Luas Persegi</h3>
-                    <div class="reset">
-                        <button>Reset</button>
+        </nav>
+    </header>
+    <main>
+        <div class="content">
+            <div class="content-header">
+                <div class="header-wrap">
+                    <div class="content-title">
+                        <h1>Welcome to Katik</h1>
+                    </div>
+                    <div class="content-subtitle">
+                        <p>Hai Sobat, Selamat datang di Katik :]</p>
+                        <p>Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangun datar</p>
                     </div>
                 </div>
-                <div class="layout-bangun-datar">
-                    <div class="info-bangun-datar">
-                        <img src="https://o-cdn-cas.sirclocdn.com/parenting/images/Persegi_finirezyhome.wordpress.co.width-500.format-webp.webp" alt="Gambar Bangun Datar" width="150" style="border-radius: 10px;">
-                        <div class="info">
-                            <p>Rumus Luas Persegi yaitu:</p>
-                            <b>L = S x S</b>
-                            <br><br>
-                            <p>L = Luas</p>
-                            <p>S = Sisi</p>
+            </div>
+            <div class="content-body">
+                <div class="content-result">
+                    <div class="result-header">
+                        <p>Result Box</p>
+                    </div>
+                    <div class="result-body">
+                        <p class="result">Result will appear here...</p>
+                    </div>
+                </div>
+                <div class="content-input">
+                    <div class="tabs-bangun-datar">
+                        <ul>
+                            <li>
+                                <button class="active-tab" value="luas">Luas</button>
+                            </li>
+                            <li>
+                                <button class="" value="keliling">Keliling</button>
+                            </li>
+                        </ul>
+                        <h3 class="title-hitung">Hitung Luas & Keliling</h3>
+                        <div class="reset">
+                            <button class="btn-reset">Reset</button>
                         </div>
                     </div>
-                    <div class="input-bangun-datar">
-                        <div class="input-header">
-                            <input type="number" name="luas" id="input-luas" placeholder="Masukan angka">
+                    <div class="layout-bangun-datar">
+                        <div class="info-bangun-datar">
+                            <img src="https://o-cdn-cas.sirclocdn.com/parenting/images/Persegi_finirezyhome.wordpress.co.width-500.format-webp.webp" alt="Gambar Bangun Datar" width="150" style="border-radius: 10px;">
+                            <div class="info">
+                                <p>Rumus Luas Persegi yaitu:</p>
+                                <b>L = S x S</b>
+                                <br><br>
+                                <p>L = Luas</p>
+                                <p>S = Sisi</p>
+                            </div>
                         </div>
-                        <!-- <div class="hasil">
-                            <p>L = S x S</p>
-                            <p>L = 40 x 40</p>
-                            <p>L = 1600</p>
-                        </div> -->
-                        <button class="btn-hitung">Hitung!</button>
+                        <div class="input-bangun-datar">
+                            <div class="input-header">
+                                <input type="number" name="luas" id="input-luas" placeholder="Masukan angka" onkeydown="enterLuas(event)">
+                            </div>
+                            <button class="btn-hitung btn-luas" value="luas">Hitung!</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
 <script src="./js/script.js"></script>
 </body>
 </html>
