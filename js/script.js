@@ -15,27 +15,31 @@ tabs.forEach((tab) => {
             layoutBangunDatar.innerHTML = bangunDatarKeliling()
         }
         if (tab.value == 'luas'){
-            layoutBangunDatar.innerHTML = `
-            <div class="info-bangun-datar">
-                <img src="https://o-cdn-cas.sirclocdn.com/parenting/images/Persegi_finirezyhome.wordpress.co.width-500.format-webp.webp" alt="Gambar Bangun Datar" width="150" style="border-radius: 10px;">
-                <div class="info">
-                    <p>Rumus Luas Persegi yaitu:</p>
-                    <b>L = S x S</b>
-                    <br><br>
-                    <p>L = Luas</p>
-                    <p>S = Sisi</p>
-                </div>
-            </div>
-            <div class="input-bangun-datar">
-                <div class="input-header">
-                    <input type="number" name="luas" id="input-luas" placeholder="Masukan angka" onkeydown="enter(event)">
-                </div>
-                <button class="btn-hitung btn-luas" value="luas">Hitung!</button>
-            </div>
-            `
+            layoutBangunDatar.innerHTML = bangunDatarLuas()
         }
     }
 })
+
+const bangunDatarLuas = () => {
+    return `
+        <div class="info-bangun-datar">
+            <img src="https://o-cdn-cas.sirclocdn.com/parenting/images/Persegi_finirezyhome.wordpress.co.width-500.format-webp.webp" alt="Gambar Bangun Datar" width="150" style="border-radius: 10px;">
+            <div class="info">
+                <p>Rumus Luas Persegi yaitu:</p>
+                <b>L = S x S</b>
+                <br><br>
+                <p>L = Luas</p>
+                <p>S = Sisi</p>
+            </div>
+        </div>
+        <div class="input-bangun-datar">
+            <div class="input-header">
+                <input type="number" name="luas" id="input-luas" placeholder="Masukan angka" onkeydown="enter(event)">
+            </div>
+            <button class="btn-hitung btn-luas" value="luas">Hitung!</button>
+        </div>
+    `
+}
 
 const bangunDatarKeliling = () => {
     return `
@@ -70,15 +74,34 @@ setInterval(() => {
         } else {
             const say = `Untuk mencari Luas Persegi, pertama-tama kita ketahui dulu nih Rumus Luas Persegi nya yaitu: L = S x S. [L = Luas] dan [S = Sisi]. Selanjutnya kita hitung Luas Persegi dari angka yang kamu masukan tadi. Jadi, hasil Luas Persegi adalah L = ${inputLuas.value} x ${inputLuas.value} = ${hasilLuas}.`
             let i = 0
+            btnLuas.disabled = true
             const typing = setInterval(() => {
                 if(i === 0){
                     resultBox.innerHTML = ''
                 }
                 resultBox.innerHTML += say.charAt(i)
                 i++
+                tabs[1].onclick = () => {
+                    if(i < say.length && i !== 0){
+                        alert('Tunggu prosesnya selesai dulu yaa..')
+                    }
+                    if(i === 0 || i > say.length){
+                        if(tabs[1].className == ''){
+                            for(let i = 0; i < tabs.length; i++ ){
+                                if(tabs[i].className === 'active-tab'){
+                                    tabs[i].classList.remove('active-tab')
+                                }
+                            }
+                            tabs[1].classList.add('active-tab')
+                            layoutBangunDatar.innerHTML = bangunDatarKeliling()
+                        }
+                    }
+                }
                 btnReset.onclick = () => {
+                    i = 0
                     clearInterval(typing)
                     inputLuas.value = ''
+                    btnLuas.disabled = false
                     resultBox.innerHTML = 'Result will appear here...'
                 }
             },50)
@@ -87,6 +110,7 @@ setInterval(() => {
     btnReset.onclick = () => {
         clearInterval(typing)
         inputLuas.value = ''
+        btnLuas.disabled = false
         resultBox.innerHTML = 'Result will appear here...'
     }
 }, 500)
@@ -102,14 +126,33 @@ setInterval(() => {
         } else {
             const say = `Untuk mencari Keliling Persegi, pertama kita cari tahu dulu Rumus Keliling persegi nya, yaitu: K = 4 x S. [K = Keliling] dan [S = Sisi]. Setelahnya kita mulai menghitung Keliling Persegi dari angka yang kamu masukan. Jadi hasil Keliling Persegi adalah K = 4 x ${inputKeliling.value} = ${hasilKeliling}.`
             let i = 0
+            btnKeliling.disabled = true
             const typing = setInterval(() => {
                 if(i === 0){
                     resultBox.innerHTML = ''
                 }
                 resultBox.innerHTML += say.charAt(i)
                 i++
+                tabs[0].onclick = () => {
+                    if(i < say.length && i !== 0){
+                        alert('Tunggu prosesnya selesai dulu yaa..')
+                    }
+                    if(i === 0 || i > say.length){
+                        if(tabs[0].className == ''){
+                            for(let i = 0; i < tabs.length; i++ ){
+                                if(tabs[i].className === 'active-tab'){
+                                    tabs[i].classList.remove('active-tab')
+                                }
+                            }
+                            tabs[0].classList.add('active-tab')
+                            layoutBangunDatar.innerHTML = bangunDatarLuas() 
+                        }
+                    }
+                }
                 btnReset.onclick = () => {
+                    i = 0
                     clearInterval(typing)
+                    btnKeliling.disabled = false
                     inputKeliling.value = ''
                     resultBox.innerHTML = 'Result will appear here...'
                 }
@@ -118,6 +161,7 @@ setInterval(() => {
     }
     btnReset.onclick = () => {
         clearInterval(typing)
+        btnKeliling.disabled = false
         inputKeliling.value = ''
         resultBox.innerHTML = 'Result will appear here...'
     }
